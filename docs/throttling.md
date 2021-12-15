@@ -29,9 +29,9 @@ Lighthouse, by default, uses simulated throttling as it provides both quick eval
 
 The Lighthouse panel has a simplified throttling setup:
 
-1. _Simulated throttling_ remains the default setting. This matches the setup of PageSpeed Insights and the Lighthouse CLI default, maintaining cross-tool consistency. 
+1. _Simulated throttling_ remains the default setting. This matches the setup of PageSpeed Insights and the Lighthouse CLI default, maintaining cross-tool consistency.
    - If you click the `View Original Trace` button, the trace values will not match up with Lighthouse's metric results, as the original trace is prior to the simulation.
-3. _Applied throttling_ is available within the Lighthouse panel settings (⚙): uncheck the _Simulated throttling_ checkbox.  
+1. _Applied throttling_ is available within the Lighthouse panel settings (⚙): uncheck the _Simulated throttling_ checkbox.
    - In this mode, the performance data seen after clicking the [`View Trace` button](https://developers.google.com/web/updates/2018/04/devtools#traces) will match Lighthouses's numbers.
 
 Of course, CLI users can still control the exact [configuration](../readme.md#cli-options) of throttling.
@@ -111,13 +111,13 @@ Below is a table of various device classes and their approximate ranges of `benc
 
 ## Calibrating the CPU slowdown
 
-By default, Lighthouse uses **a constant 4x CPU multiplier** which moves a typical run in the high-end desktop bracket somewhere into the mid-tier mobile bracket. 
+By default, Lighthouse uses **a constant 4x CPU multiplier** which moves a typical run in the high-end desktop bracket somewhere into the mid-tier mobile bracket.
 
 You may choose to calibrate if your benchmarkIndex is in a different range than the above table would expect. Additionally, when Lighthouse is run from the CLI with default settings on an underpowered device, a warning will be added to the report suggesting you calibrate the slowdown:
 
 ![image](https://user-images.githubusercontent.com/39191/101437249-99cc9880-38c4-11eb-8122-76f2c73d9283.png)
 
-The `--throttling.cpuSlowdownMultiplier` CLI flag allows you to configure the throttling level applied. On a weaker machine, you can lower it from the default of 4x  to something more appropriate. 
+The `--throttling.cpuSlowdownMultiplier` CLI flag allows you to configure the throttling level applied. On a weaker machine, you can lower it from the default of 4x  to something more appropriate.
 
 The [Lighthouse CPU slowdown calculator webapp](https://lighthouse-cpu-throttling-calculator.vercel.app/) will compute what mutiplier to use from the  `CPU/Memory Power` value from the bottom of the report.
 
